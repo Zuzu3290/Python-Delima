@@ -1,15 +1,3 @@
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Pomodoro Timer (Tkinter)
-- Work / Short Break / Long Break cycles
-- Start / Pause / Resume / Reset / Skip
-- Session counter and progress
-- Configurable durations
-- Fully responsive UI
-- No external dependencies
-"""
 import tkinter as tk
 from tkinter import ttk, messagebox, font
 import time
@@ -27,7 +15,7 @@ CARD = "#111827" # slate-900
 TEXT = "#e5e7eb"# gray-200
 MUTED = "#9ca3af"  # gray-400
 
-# ---------------------------- APP ---------------------------- #
+# ---------------------------- The app ---------------------------- #
 class PomodoroApp(tk.Tk):
      def __init__(self):
           super().__init__()
@@ -44,17 +32,17 @@ class PomodoroApp(tk.Tk):
           self._after_id = None
           self.start_time = None
 
-         # Define fonts dynamically for resizing
-          self.timer_font = font.Font(family="Consolas", size=44, weight="bold")
-          self.title_font = font.Font(family="Segoe UI", size=18, weight="bold")
-          self.mode_font = font.Font(family="Segoe UI", size=12)
-          self.muted_font = font.Font(family="Segoe UI", size=10)
+         
+          self.timer_font = font.Font(family="Times New Romen", size=44, weight="bold")
+          self.title_font = font.Font(family="Times New Romen", size=18, weight="bold")
+          self.mode_font = font.Font(family="Times New Romen", size=12)
+          self.muted_font = font.Font(family="Times New Romen", size=10)
 
           self._build_ui()
           self._set_mode("WORK", minutes=WORK_MIN) # Bind the resize event to our font resizing function
           self.bind('<Configure>', self._on_resize)
 
- # ---- UI ----
+ # ---- ui ----
     def _build_ui(self):
           self.columnconfigure(0, weight=1)
           self.rowconfigure(0, weight=1)
@@ -256,7 +244,7 @@ class PomodoroApp(tk.Tk):
         self.is_running = False
         self._advance_session()
 
-# ---------------------------- MAIN ---------------------------- #
+# ---------------------------- executing block---------------------------- #
 def main():
     app = PomodoroApp()
     app.mainloop()
