@@ -1,0 +1,1 @@
+#the idea is to replicate the behavior demonstrate4d by Git. We would need to apply camparison operators and conditional execution. Furthermore apply while loop, use if control to ap[ply commit and add. 
